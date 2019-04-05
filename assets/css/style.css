@@ -115,6 +115,8 @@
 			display: block;
 			margin: 1.5em 0 0 0;
 			padding: 0 0 0.5em 0;
+            font-size: 0.8em;
+            color: #eeeeee;
 		}
 		
 	footer
@@ -923,7 +925,7 @@
 	
 	#footer header .byline
 	{
-		color: rgba(255,255,255,.2);
+		color: rgba(255,255,255,.6);
 	}
 
 /*********************************************************************************/
@@ -942,13 +944,13 @@
 		padding: 3em 0em;
 		border-top: 1px solid;
 		border-color: rgba(255,255,255,.05);
-		color:  rgba(255,255,255,.1);
+		color:  rgba(255,255,255,0.6);
 	}
 	
 	#copyright a
 	{
 		text-decoration: none;
-		color:  rgba(255,255,255,.2);
+		color:  rgba(255,255,255,0.6);
 	}
 	
 /*********************************************************************************/
