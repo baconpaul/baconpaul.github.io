@@ -915,6 +915,9 @@ ul.contact li a:hover
 #footer
 {
 	position: relative;
+	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../images/header.jpg) no-repeat bottom center;
+	background-attachment: fixed;
+	background-size: cover;
 	text-align: center;
 }
 
@@ -925,7 +928,7 @@ ul.contact li a:hover
 
 #footer header .byline
 {
-	color: rgba(255,255,255,.6);
+	color: rgba(255,255,255,0.8);
 }
 
 /*********************************************************************************/
@@ -936,6 +939,9 @@ ul.contact li a:hover
 {
 	position: relative;
 	text-align: center;
+	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../images/header.jpg) no-repeat bottom center;
+	background-attachment: fixed;
+	background-size: cover;
 	color: #774535;
 }
 
