@@ -9,28 +9,34 @@ import Base from "../../layouts/Base.astro";
       <p class="eyebrow">Sidequest</p>
       <h1>Six Sines</h1>
       <p class="lede">
-        A compact synthesizer built around six sine sources and a flexible
-        modulation matrix — small in footprint, surprisingly deep to patch.
+        An experiment in audio rate modulation.
       </p>
     </div>
 
     <div class="prose">
+      <p class="download">Download the <a href="https://github.com/baconpaul/releases/Nightly">Nightly (1.2 candidate) release</a></p>
+      <p class="download">Download the  <a href="https://github.com/baconpaul/releases/v1.1.0">Stable (1.1) release</a></p>
+      <p class="download">Access <a href="https://github.com/baconpaul/six-sines">the Source Code</a></p>
       <p>
-        Six Sines is a free and open-source instrument I write and maintain. It
-        keeps the signal path simple — six sine oscillators you route and
-        modulate against each other — while leaving plenty of room to explore.
+        Six Sines is a six operator audio rate modulation synth. It contains features
+        from classic FM and PM synths. If you love the DX7 but found programming it too 
+        easy, Six Sines might be for you?
       </p>
       <p>
-        It's cross-platform and available as a plugin in the usual formats. The
-        source, releases, and issue tracker all live on GitHub.
+        The key features are
+        <ul>
+          <li>6 operators which can self-modulate or modulate other operators, each with its own waveform
+          <li>A modulation system where each node in the matrix gets an LFO, an envelope, and so forth
+          <li>A wide variety of modulation mechanisms - Frequency modulation including exponential and linear/TZ, 
+          Amplitude (ring) modulation, and more.
+        </ul>
       </p>
-      <ul>
-        <li>
-          Source &amp; releases: <a href="https://github.com/baconpaul/six-sines"
-            >github.com/baconpaul/six-sines</a
-          >
-        </li>
-      </ul>
+      <p>
+      In April of 2025, as Version 1.1 was shipping, the One Synth Challenge chose Six Sines as its synth of the month. You can 
+      hear the final playlist here:
+      </p>
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1977507780&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kvrosc" title="One Synth Challenge" target="_blank" style="color: #cccccc; text-decoration: none;">One Synth Challenge</a> · <a href="https://soundcloud.com/kvrosc/sets/one-synth-challenge-192-six" title="One Synth Challenge #192: Six Sines by BaconPaul" target="_blank" style="color: #cccccc; text-decoration: none;">One Synth Challenge #192: Six Sines by BaconPaul</a></div>
+      
     </div>
   </section>
 </Base>
