@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import PortfolioCard from "../components/PortfolioCard.astro";
+
+const cards = [
+  {
+    title: "Surge Synth Team",
+    blurb:
+      "I'm a maintainer and developer on Surge XT, OB-Xf, Shortcircuit XT, and the team's family of free, open-source instruments, libraries, and effects.",
+    href: "https://surge-synth-team.org",
+    external: true,
+    image: "/images/surge.png",
+    imagePos: "top",
+  },
+  {
+    title: "Sidequests",
+    blurb:
+      "I build synths and effects outside the Surge team to experiment with ideas or help support the community.",
+    href: "/sidequests/",
+    image: "/images/six-sines.png",
+  },
+  {
+    title: "Music & Composition",
+    blurb:
+      "I'm an active musician both in band contexts and in solo electronic and ambient context.",
+    href: "/music/",
+    image: "/images/music.png",
+  },
+  {
+    title: "The CLAP Standard",
+    blurb:
+      "I am a contributor and reviewer for the CLAP standard and maintain several of the CLAP-associated tools.",
+    href: "https://cleveraudio.org",
+    external: true,
+    image: "/images/clap.png",
+  },
+  {
+    title: "Interviews & Podcasts",
+    blurb:
+      "I've done a few podcast appearances and interviews about open-source audio.",
+    href: "/interviews/",
+    image: "/images/interviews.png",
+  },
+];
+---
+
+<Base>
+  <section class="wrap hero">
+    <h1>baconpaul.org</h1>
+    <p class="tagline">Open-source Audio Software Developer and Musician</p>
+  
+  </section>
+
+  <section class="wrap">
+    <div class="grid">
+      {cards.map((c) => <PortfolioCard {...c} />)}
+    </div>
+  </section>
+</Base>

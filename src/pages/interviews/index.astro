@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+import { interviews } from "../../data/interviews";
+
+const sorted = [...interviews].sort((a, b) => b.date.localeCompare(a.date));
+const fmt = (d: string) =>
+  new Date(d + "T00:00:00").toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  });
+---
+
+<Base title="Interviews & Podcasts — baconpaul">
+  <section class="wrap page">
+    <a class="back" href="/">← baconpaul</a>
+    <div class="page-head">
+      <p class="eyebrow">Interviews &amp; Podcasts</p>
+      <h1>Conversations &amp; appearances</h1>
+      <p class="lede">
+        Podcast episodes, talks, and interviews about open-source audio, synth
+        development, and the occasional bit of music. If you want me to show up
+        on a podcast or some such in the future, just reach me on github or discord.
+      </p>
+    </div>
+
+    <div class="timeline">
+      {
+        sorted.map((e) => (
+          <div class="entry">
+            <div class="date">{fmt(e.date)}</div>
+            <div class="meta">
+              <h3>
+                {e.url ? (
+                  <a href={e.url} target="_blank" rel="noopener noreferrer">
+                    {e.title}
+                  </a>
+                ) : (
+                  e.title
+                )}
+              </h3>
+              <div class="venue">{e.venue}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>

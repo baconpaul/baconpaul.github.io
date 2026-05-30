@@ -1,0 +1,54 @@
+---
+import Base from "../../layouts/Base.astro";
+import PortfolioCard from "../../components/PortfolioCard.astro";
+
+const cards = [
+  {
+    title: "Six Sines",
+    blurb:
+      "FM, RM, AM, PM, it has it all! A 6 op synthesizer experimenting with audio rate modulation in many forms.",
+    href: "/sidequests/six-sines/",
+    image: "/images/six-sines.png",
+  },
+  {
+    title: "Two Filters",
+    blurb: "A plugin testing our sst-filters API with a variety of modulation options.",
+    href: "/sidequests/two-filters/",
+    image: "/images/two-filters.png",
+  },
+  {
+    title: "Airwindows Consolidated",
+    blurb: "All the Airwindows effects in a single consolidated JUCE and VCV Rack Plugin.",
+    href: "/sidequests/airwindows-consolidated/",
+    image: "/images/airwindows.png",
+    imagePos: "top",
+  },
+  {
+    title: "VCV Rack Plugins",
+    blurb: "Various other VCV Rack Plugins I build and maintain.",
+    href: "/sidequests/vcv-rack-plugins/",
+    image: "/images/vcv-rack.png",
+  },
+];
+---
+
+<Base title="Sidequests — baconpaul">
+  <section class="wrap page">
+    <a class="back" href="/">← baconpaul</a>
+    <div class="page-head">
+      <p class="eyebrow">Sidequests</p>
+      <h1>Sidequest Projects</h1>
+      <p class="lede">
+        Alongside the Surge Synth Team work, I build a handful of smaller
+        instruments, effects, and tools of my own — all free, open source, and
+        cross-platform. These allow me to experiment with ideas which may not
+        be ready for Surge projects, to create and test libraries, or to just
+        sort of screw around a bit!
+      </p>
+    </div>
+
+    <div class="grid cols-2">
+      {cards.map((c) => <PortfolioCard {...c} />)}
+    </div>
+  </section>
+</Base>

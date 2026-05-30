@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  blurb: string;
+  href: string;
+  external?: boolean;
+  cover?: string;
+  image?: string;
+  imagePos?: string;
+}
+
+const {
+  title,
+  blurb,
+  href,
+  external = false,
+  cover,
+  image,
+  imagePos,
+} = Astro.props;
+const arrow = external ? "↗" : "→";
+---
+
+<a
+  class="card"
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  <div class="cover" style={cover ? `background:${cover}` : undefined}>
+    {
+      image && (
+        <img
+          src={image}
+          alt={title}
+          style={imagePos ? `object-position:${imagePos}` : undefined}
+        />
+      )
+    }
+  </div>
+  <div class="card-body">
+    <span class="card-title">
+      {title}
+      <span class="arrow" aria-hidden="true">{arrow}</span>
+    </span>
+    <span class="card-blurb">{blurb}</span>
+  </div>
+</a>
