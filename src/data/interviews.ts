@@ -17,7 +17,7 @@ export const interviews: Interview[] = [
     url: "https://www.youtube.com/watch?v=BZlqXefJW8E&t=3023s",
   },
   {
-    date: "2026-11-01",
+    date: "2025-11-01",
     title:
       "Episode 40 — The Art of Virtual Synth Design II: Surge XT, Open-Source Powerhouse",
     venue: "The DawBench Podcast",
@@ -30,7 +30,7 @@ export const interviews: Interview[] = [
     url: "https://juce.com/made-with-juce/baconpaul-from-the-surge-synthesizer-team/",
   },
   {
-    date: "2026-12-01",
+    date: "2025-12-01",
     title: "Linux Audio Developers Spotlight: baconpaul / Paul Walker",
     venue: "linuxaudio.dev",
     url: "https://linuxaudio.dev/linux-audio-developers-spotlight/baconpaul-paul-walker",
