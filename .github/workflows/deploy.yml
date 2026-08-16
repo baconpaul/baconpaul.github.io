@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Daily at 12:00 UTC, to refresh the generated reports under /reports.
+    - cron: "0 12 * * *"
 
 permissions:
   contents: read
@@ -20,6 +23,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      # Regenerates public/reports/* in the working tree just before the build,
+      # so the deployed report is always current and nothing is committed. If
+      # this fails the build still runs and ships the last committed copy,
+      # which carries its own "Generated ..." timestamp.
+      - name: Generate reports
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/surge_report.py \
+            --publish-dir . \
+            --public-only \
+            --out "$RUNNER_TEMP/reports"
       - name: Build with Astro
         uses: withastro/action@v6
 
