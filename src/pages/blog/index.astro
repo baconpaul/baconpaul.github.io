@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", (p) => !p.data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+---
+
+<Base title="Blog — baconpaul">
+  <section class="wrap page">
+    <a class="back" href="/">← baconpaul</a>
+    <div class="page-head">
+      <p class="eyebrow">Blog</p>
+      <h1>Short things about audio dev</h1>
+    </div>
+
+    <div class="timeline">
+      {
+        posts.map((p) => (
+          <div class="entry">
+            <div class="date">{fmt(p.data.date)}</div>
+            <div class="meta">
+              <h3>
+                <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+              </h3>
+              {p.data.description && <div class="venue">{p.data.description}</div>}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>
